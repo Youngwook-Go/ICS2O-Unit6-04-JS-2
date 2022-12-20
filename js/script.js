@@ -11,13 +11,29 @@
  */
 
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-Template-PWA/sw.js", {
-    scope: "/ICS2O-Template-PWA/",
+  navigator.serviceWorker.register("/ICS2O-Unit6-04-JS-2/sw.js", {
+    scope: "/ICS2O-Unit6-04-JS-2/",
   })
 }
 
 // function description
 
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+function pageLoad() {
+  const params = new URLSearchParams(document.location.search)
+
+  const celsiusInput = params.get("c")
+  console.log(celsiusInput)
+
+  const celsius = celsiusInput
+  const kelvin = (celsiusInput * 1) + 273.15
+  const fahrenheit = (celsiusInput * 1.8) + 32
+
+  document.getElementById("answer").innerHTML =
+    "celsius temperature is : " + 
+    celsius +
+    " °C<br>kelvin temperature is : " +
+    kelvin +
+    " °K<br>fahrenheit temperature is : " +
+    fahrenheit +
+    " F"
 }
