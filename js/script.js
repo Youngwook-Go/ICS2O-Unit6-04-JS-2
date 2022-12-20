@@ -25,11 +25,11 @@ function pageLoad() {
   console.log(celsiusInput)
 
   const celsius = celsiusInput
-  const kelvin = (celsiusInput * 1) + 273.15
-  const fahrenheit = (celsiusInput * 1.8) + 32
+  const kelvin = celsiusInput * 1 + 273.15
+  const fahrenheit = celsiusInput * 1.8 + 32
 
   document.getElementById("answer").innerHTML =
-    "celsius temperature is : " + 
+    "celsius temperature is : " +
     celsius +
     " °C<br>kelvin temperature is : " +
     kelvin +
